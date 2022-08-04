@@ -1,12 +1,15 @@
-import 'package:sqflite/sqflite.dart';
-import 'package:sqflite_pof/models/user.dart';
+// ignore: depend_on_referenced_packages
 import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
+
+import 'package:sqflite_pof/models/user.dart';
+
 import '../models/todo.dart';
 
 class TodoDatabase {
   static final TodoDatabase instance = TodoDatabase._initialize();
   static Database? _database;
-  TodoDatabase._initialize();
+  TodoDatabase._initialize();//Named constructor
 
   Future _createDB(Database db, int version) async {
     const userUserNameType = 'TEXT PRIMARY KEY NOT NULL';
@@ -59,6 +62,7 @@ class TodoDatabase {
   }
 
   //CRUD for User create
+  //create a new user
   Future<User> createUser(User user) async {
     final db = await instance.database;
     await db!.insert(
@@ -85,7 +89,7 @@ class TodoDatabase {
   }
 
   //Read from all users
-  Future<List<User>> getUsers() async {
+  Future<List<User>> getAllUsers() async {
     final db = await instance.database;
     final result = await db!.query(
       userTable,

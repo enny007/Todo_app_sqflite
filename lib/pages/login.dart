@@ -108,7 +108,7 @@ class _LoginState extends State<Login> {
                     primary: Colors.white,
                   ),
                   onPressed: () {
-                    Navigator.of(context).pushNamed(RouteManager.registerPage);
+                    Navigator.pushNamed(context, RouteManager.registerPage);
                   },
                   child: const Text('Register a new User'),
                 ),
