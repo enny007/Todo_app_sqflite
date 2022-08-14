@@ -106,7 +106,7 @@ class _TodoPageState extends State<TodoPage> {
                                         showSnackBar(context,
                                             'Duplicate value, please check your entry');
                                       } else {
-                                        //If it there are no duplicate, then create a new Todo
+                                        //If there are no duplicate, then create a new Todo
                                         String result = await context
                                             .read<TodoService>()
                                             .createTodo(todo);
